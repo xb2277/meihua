@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>梅花卦典</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- 时间区 -->
+    <section class="date-section">
+      <span class="time-text" id="currentTime"></span>
+      <span class="date-text" id="currentDate"></span>
+      <span class="lunar-text" id="lunarDate"></span>
+      <div class="sizhu-box">
+        <span class="sizhu-text" id="sizhu"></span>
+      </div>
+    </section>
+
+    <!-- 分隔 -->
+    <div class="divider-wrap">
+      <div class="divider-line"></div>
+      <span class="divider-dot">◆</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- 简介 -->
+    <section class="intro-box">
+      <span class="intro-title">梅花卦典</span>
+      <span class="intro-body">梅花卦典是结合了三位先师的经验和若干古籍整理出来的卦典，需要求测者先让自己心平思静几分钟，同时心中默默观照自己求测的问题，然后想一个数字，注意这里的“想”不是刻意的去想，而是抓住你脑中突然一闪而过的数字，如果你准备好了，请点击下方的“准备好了”按钮！</span>
+    </section>
+
+    <!-- 准备好了按钮 -->
+    <div class="btn-area">
+      <button class="qiu-btn" id="revealBtn">
+        <span class="qiu-btn-text">准备好了</span>
+      </button>
+      <span class="btn-hint">— 心诚则灵 —</span>
+    </div>
+
+    <!-- 求测表单 -->
+    <section class="divination-form" id="divinationForm">
+      <div class="form-title">请选择求测信息</div>
+
+      <span class="form-section-label">将你求测的事项归类下列项目</span>
+      <div class="category-grid" id="categoryGrid"></div>
+
+      <div class="num-input-wrap">
+        <span class="form-section-label">心中所念数字</span>
+        <input class="num-input" id="numInput" type="number" placeholder="请输入您念头中出现的数字">
+        <span class="form-hint">静心默念所求之事，将心中闪现的数字填入</span>
+      </div>
+
+      <div class="submit-btn-wrap">
+        <button class="submit-btn" id="submitBtn">
+          <span class="submit-btn-text">开始求测</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 广告占位区 -->
+    <section class="ad-section" id="adSection">
+      <div class="ad-placeholder">--- 广告加载中 ---<br>感谢您的支持</div>
+      <button class="ad-skip-btn" id="adSkipBtn">跳过广告</button>
+    </section>
+
+    <!-- 结果区 -->
+    <section class="result-section" id="resultSection">
+      <div class="result-divider">
+        <div class="r-line"></div>
+        <span class="r-diamond">◆</span>
+        <div class="r-line"></div>
+      </div>
+      <div class="result-box">
+        <span class="result-label" id="resultLabel">求测结果</span>
+        <span class="result-content" id="resultText"></span>
+      </div>
+
+      <div class="taiji-wrap">
+        <img class="taiji-img" src="tjt.png" alt="太极图">
+      </div>
+
+      <div class="footer-divider">
+        <div class="f-line"></div>
+        <span class="f-diamond">◆</span>
+        <div class="f-line"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/constants.js"></script>
+  <script src="js/solarTerms.js"></script>
+  <script src="js/lunar.js"></script>
+  <script src="js/pillars.js"></script>
+  <script src="js/gua-dict.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

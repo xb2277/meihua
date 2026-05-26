@@ -1,0 +1,5 @@
+.DS_Store
+.claude/
+miniprogram/
+project.config.json
+project.private.config.json.bak
