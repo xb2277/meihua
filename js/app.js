@@ -62,7 +62,6 @@ var app = {
     });
 
     document.getElementById('submitBtn').addEventListener('click', app.onSubmit);
-    document.getElementById('adSkipBtn').addEventListener('click', app.onAdComplete);
   },
 
   onSubmit: function() {
@@ -80,26 +79,8 @@ var app = {
     document.getElementById('resultText').textContent = result;
     document.getElementById('resultLabel').textContent = '【' + app.selectedCategory + '】求测结果';
 
-    // 跳转到广告占位
-    app.showAd(function() {
-      document.getElementById('adSection').style.display = 'none';
-      document.getElementById('resultSection').style.display = 'block';
-      document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
-    });
-  },
-
-  showAd: function(callback) {
-    document.getElementById('adSection').style.display = 'block';
-    document.getElementById('adSection').scrollIntoView({ behavior: 'smooth' });
-    app._adCallback = callback;
-    // TODO: 后续接入真实广告SDK，广告播放完成后调用 app.onAdComplete()
-  },
-
-  onAdComplete: function() {
-    if (app._adCallback) {
-      app._adCallback();
-      app._adCallback = null;
-    }
+    document.getElementById('resultSection').style.display = 'block';
+    document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
   },
 
   showToast: function(msg) {

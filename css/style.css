@@ -289,38 +289,71 @@ body {
   letter-spacing: 0.25rem;
 }
 
-/* ===== 广告占位 ===== */
-.ad-section {
-  display: none;
-  margin-top: 0.75rem;
-  padding: 2rem 0.75rem;
+/* ===== 打赏区 ===== */
+.donate-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.d-line {
+  flex: 1;
+  height: 1px;
+  background: #D4C5A0;
+  max-width: 5rem;
+}
+
+.d-diamond {
+  color: #C9A96E;
+  font-size: 0.625rem;
+  margin: 0 0.5rem;
+}
+
+.donate-text {
   text-align: center;
-  background: #FFF8EE;
-  border: 1px dashed #D4C5A0;
-  border-radius: 0.375rem;
-  animation: fadeIn 0.3s ease;
+  margin-bottom: 1.25rem;
 }
 
-.ad-placeholder {
+.donate-line1 {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #8B1A1A;
+  letter-spacing: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.donate-line2 {
+  display: block;
+  font-size: 0.875rem;
   color: #8B7355;
-  font-size: 0.8125rem;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.125rem;
 }
 
-.ad-skip-btn {
-  display: inline-block;
-  padding: 0.375rem 1.5rem;
-  background: #8B1A1A;
-  color: #F5F0E8;
-  border: none;
-  border-radius: 1.25rem;
-  font-size: 0.8125rem;
-  cursor: pointer;
-  outline: none;
+.donate-qrcodes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.ad-skip-btn:active {
-  opacity: 0.85;
+.qrcode-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrcode-img {
+  width: 8rem;
+  height: auto;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.qrcode-label {
+  font-size: 0.8125rem;
+  color: #5C4033;
 }
 
 /* ===== 结果区 ===== */
@@ -369,7 +402,8 @@ body {
 
 .result-content {
   display: block;
-  font-size: 0.9375rem;
+  font-size: 1.25rem;
+  font-weight: bold;
   color: #3C2A1E;
   line-height: 2.2;
   text-align: center;
