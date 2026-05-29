@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" id="htmlRoot">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>梅花卦典</title>
+  <title id="pageTitle">梅花卦典</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="locale-tag" id="localeTag">海外版</div>
   <div class="page">
 
     <!-- 时间区 -->
@@ -28,34 +29,34 @@
 
     <!-- 简介 -->
     <section class="intro-box">
-      <span class="intro-title">梅花卦典</span>
-      <span class="intro-body">梅花卦典是结合了三位先师的经验和若干古籍整理出来的卦典，需要求测者先平心静气几分钟，同时心中默默观照自己求测的问题，然后想一个数字，注意这里的“想”不是刻意的去想，而是抓住你脑中突然一闪而过的数字，如果你准备好了，请点击下方的按钮！</span>
+      <span class="intro-title" id="introTitle">梅花卦典</span>
+      <span class="intro-body" id="introBody">梅花卦典是结合了三位先师的经验和若干古籍整理出来的卦典，需要求测者先平心静气几分钟，同时心中默默观照自己求测的问题，然后想一个数字，注意这里的"想"不是刻意的去想，而是抓住你脑中突然一闪而过的数字，如果你准备好了，请点击下方的按钮！</span>
     </section>
 
     <!-- 准备好了按钮 -->
     <div class="btn-area">
       <button class="qiu-btn" id="revealBtn">
-        <span class="qiu-btn-text">准备好了</span>
+        <span class="qiu-btn-text" id="revealBtnText">准备好了</span>
       </button>
-      <span class="btn-hint">— 心诚则灵 —</span>
+      <span class="btn-hint" id="btnHint">— 心诚则灵 —</span>
     </div>
 
     <!-- 求测表单 -->
     <section class="divination-form" id="divinationForm">
-      <div class="form-title">请选择求测信息</div>
+      <div class="form-title" id="formTitle">请选择求测信息</div>
 
-      <span class="form-section-label">将你求测的事项尽量归类于下列项目之一</span>
+      <span class="form-section-label" id="catLabel">将你求测的事项尽量归类于下列项目之一</span>
       <div class="category-grid" id="categoryGrid"></div>
 
       <div class="num-input-wrap">
-        <span class="form-section-label">心中所念数字</span>
+        <span class="form-section-label" id="numLabel">心中所念数字</span>
         <input class="num-input" id="numInput" type="number" placeholder="输入您脑海中一闪而过的数字">
-        <span class="form-hint">静心默念所求之事，将心中闪现的数字填入</span>
+        <span class="form-hint" id="numHint">静心默念所求之事，将心中闪现的数字填入</span>
       </div>
 
       <div class="submit-btn-wrap">
         <button class="submit-btn" id="submitBtn">
-          <span class="submit-btn-text">开始求测</span>
+          <span class="submit-btn-text" id="submitBtnText">开始求测</span>
         </button>
       </div>
     </section>
@@ -70,6 +71,7 @@
       <div class="result-box">
         <span class="result-label" id="resultLabel">求测结果</span>
         <span class="result-content" id="resultText"></span>
+        <span class="result-summary" id="resultSummary"></span>
       </div>
 
       <div class="taiji-wrap">
@@ -81,18 +83,39 @@
         <span class="d-diamond">◆</span>
         <div class="d-line"></div>
       </div>
-      <div class="donate-text">
-        <span class="donate-line1">有得有舍，随心随缘</span>
-        <span class="donate-line2">一份打赏，三柱香火，福生无量</span>
-      </div>
-      <div class="donate-qrcodes">
-        <div class="qrcode-item">
-          <img class="qrcode-img" src="img/wx.jpg" alt="微信赞赏码">
-          <span class="qrcode-label">微信</span>
+
+      <!-- 国内打赏 -->
+      <div class="donate-cn" id="donateCN">
+        <div class="donate-text">
+          <span class="donate-line1">有得有舍，随心随缘</span>
+          <span class="donate-line2">一份打赏，三柱香火，福生无量</span>
         </div>
-        <div class="qrcode-item">
-          <img class="qrcode-img" src="img/zfb.jpg" alt="支付宝收款码">
-          <span class="qrcode-label">支付宝</span>
+        <div class="donate-qrcodes">
+          <div class="qrcode-item">
+            <img class="qrcode-img" src="img/wx.jpg" alt="微信赞赏码">
+            <span class="qrcode-label">微信</span>
+          </div>
+          <div class="qrcode-item">
+            <img class="qrcode-img" src="img/zfb.jpg" alt="支付宝收款码">
+            <span class="qrcode-label">支付宝</span>
+          </div>
+        </div>
+        <div class="cn-extra">
+          如果你对卦辞不理解或有更多需要解惑的，可以加微信：<strong>bclove999</strong>
+        </div>
+      </div>
+
+      <!-- 海外打赏 -->
+      <div class="donate-overseas" id="donateOverseas" style="display:none">
+        <div class="donate-text">
+          <span class="donate-line1">Give & Receive, Go with the Flow</span>
+          <span class="donate-line2">Your support keeps the incense burning</span>
+        </div>
+        <a class="paypal-btn" href="https://paypal.me/suanyigua" target="_blank">
+          Buy me a coffee ☕️
+        </a>
+        <div class="overseas-extra">
+          If you'd like a deeper interpretation of your reading, send a screenshot of your result and your donation to <a class="email-link" href="mailto:jiuli5515@gmail.com">jiuli5515@gmail.com</a>.
         </div>
       </div>
     </section>
@@ -107,6 +130,7 @@
   <script src="js/lunar.js"></script>
   <script src="js/pillars.js"></script>
   <script src="js/gua-dict.js"></script>
+  <script src="js/gua-summary.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -17,6 +17,26 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* ===== 语言切换标签 ===== */
+.locale-tag {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.2rem 0.5rem;
+  background: rgba(139, 26, 26, 0.8);
+  color: #F5F0E8;
+  font-size: 0.6875rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  user-select: none;
+  backdrop-filter: blur(4px);
+}
+
+.locale-tag:active {
+  opacity: 0.8;
+}
+
 .page {
   max-width: 28rem;
   margin: 0 auto;
@@ -374,6 +394,53 @@ body {
   color: #5C4033;
 }
 
+/* ===== 海外打赏按钮 ===== */
+.donate-overseas {
+  text-align: center;
+}
+
+.paypal-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: #FFC439;
+  color: #003087;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 1.375rem;
+  text-decoration: none;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s;
+}
+
+.paypal-btn:active {
+  transform: scale(0.96);
+}
+
+.overseas-extra {
+  margin-top: 1rem;
+  font-size: 0.6875rem;
+  color: #8B7355;
+  line-height: 1.6;
+}
+
+.cn-extra {
+  margin-top: 1rem;
+  font-size: 0.6875rem;
+  color: #8B7355;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.email-link {
+  color: #8B1A1A;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
 /* ===== 结果区 ===== */
 .result-section {
   display: none;
@@ -416,6 +483,14 @@ body {
   color: #8B1A1A;
   margin-bottom: 0.75rem;
   letter-spacing: 0.1875rem;
+  line-height: 1.8;
+}
+
+.result-subtitle {
+  font-size: 0.8125rem;
+  font-weight: normal;
+  color: #8B7355;
+  letter-spacing: 0.0625rem;
 }
 
 .result-content {
@@ -426,6 +501,17 @@ body {
   line-height: 2.2;
   text-align: center;
   white-space: pre-line;
+}
+
+.result-summary {
+  display: none;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #D4C5A0;
+  font-size: 0.75rem;
+  color: #8B7355;
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* ===== 太极图 ===== */
