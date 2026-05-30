@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xb2277.github.io/meihua/sitemap.xml
